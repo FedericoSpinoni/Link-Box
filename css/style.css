@@ -1,5 +1,7 @@
+/* Layout */
+
 html, body {
-    overflow: hidden;
+    overflow:hidden;
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100%;
@@ -9,12 +11,15 @@ html, body {
 }
 
 .container {
+    overflow:auto;
+    overflow-x:hidden;
+    overflow-wrap: ;
     position: absolute;
     width: 100%;
     height: 100%;
     background:#fff url(../img/01.jpg) no-repeat center center;
-    background-size:cover;
-    box-shadow:inset 0 -1px 5px rgba(0,0,0,0.6);
+    background-size: cover;
+    box-shadow: inset 0 -1px 5px rgba(0,0,0,0.6);
 }
 
 .slide {
@@ -32,14 +37,14 @@ html, body {
 
 @media screen and (max-height: 460px) {
     .slide {
-        height: 90%;
+        top: 240px;
+        margin-bottom: 15px;
     }
 }
 
 @media screen and (max-width: 780px) {
     .slide {
         left: 50%;
-        width: 90%;
     }
 }
 
@@ -57,17 +62,17 @@ html, body {
 
 .file-uploads {
     overflow-x:hidden;
-    width: 340px;
-    height: 195px;
+    width: 95%;
+    height: 200px;
     padding-left: 10px;
 }
 
-input[type=file] {
+input[type=file], [type=submit]{
     display: none;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -79,3 +84,20 @@ input[type=file] {
     background: rgb(179, 164, 164);
     border-radius: 10px;
 }
+
+/* Buttons */
+
+.btn-gradient {
+    background: rgb(126, 191, 154);
+    margin: 5px;
+	text-decoration: none;
+	color: white;
+	padding: 10px 30px;
+	display: inline-block;
+	position: relative;
+	border-radius: 4px;
+	outline: none;
+	cursor: pointer;
+}
+
+.btn-gradient.green:active  {background: #72B08E;}
