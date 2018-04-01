@@ -9,7 +9,7 @@
    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     	<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css?version=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
     	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     	<link rel="shortcut icon" href="img/favicon.ico">
     	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
@@ -20,7 +20,8 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 			<script type='text/javascript' src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js'></script> 
 		<![endif]-->
-		<script src="js/modernizr-2.8.3.min.js"></script>
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/function.js"></script>
 	</head>
 	<body>
 		<!--[if lte IE 8]>

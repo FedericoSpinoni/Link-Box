@@ -63,7 +63,7 @@ html, body {
 .file-uploads {
     overflow-x:hidden;
     width: 95%;
-    height: 200px;
+    height: 210px;
     padding-left: 10px;
 }
 
@@ -101,3 +101,17 @@ input[type=file], [type=submit]{
 }
 
 .btn-gradient.green:active  {background: #72B08E;}
+
+/* DropZone */
+
+.drop {
+    margin: 5px;
+    border: 2px dashed rgb(179, 164, 164);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    font: 20pt bold 'Vollkorn';
+    color: rgb(179, 164, 164);
+}
