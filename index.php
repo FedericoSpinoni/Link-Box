@@ -22,9 +22,15 @@
                     </div>
 
                     <div class="divisor"></div>
-                        <div contentEditable="true" class="message"></div>
+
+                    <div class="textarea-container">
+                        <textarea name="message" placeholder="Message"></textarea>
+                        <div class="textarea-size"></div>
+                    </div>
+
+
                     <div class="divisor"></div>
-                        <input type="password" name="psw" class="password">
+                        <input type="password" name="psw" class="password" placeholder="Password">
                 
                 </div>
                 <div class="divisor"></div>

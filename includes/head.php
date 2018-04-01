@@ -22,6 +22,7 @@
 		<![endif]-->
 		<script src="js/modernizr.min.js"></script>
 		<script src="js/function.js"></script>
+		<script src="js/autogrowing.js"></script>
 	</head>
 	<body>
 		<!--[if lte IE 8]>

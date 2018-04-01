@@ -47,7 +47,7 @@ html, body {
 
 @media screen and (max-width: 420px) {
     .slide {
-        top: 240px;
+        top: 265px;
     }
 }
 
@@ -70,6 +70,14 @@ p {
 
 input[type=file], [type=submit]{
     display: none;
+}
+
+div:empty:before {
+    content:attr(data-placeholder);
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    color:rgb(137, 117, 117);
 }
 
 ::-webkit-scrollbar {
@@ -138,4 +146,37 @@ input[type=file], [type=submit]{
 .form {
     height: 300px;
     overflow-x: hidden;
+}
+
+.textarea-container {
+    position: relative;
+    width: 100%;
+  }
+  
+textarea, .textarea-size {
+    min-height: 25px;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0);
+    padding: 11px 5%;
+    border: none;
+    outline: none;
+}
+  
+textarea {
+    height: 100%;
+    position: absolute;
+    resize:none;
+    white-space: normal;
+}
+  
+.textarea-size {
+    visibility: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
