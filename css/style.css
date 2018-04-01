@@ -57,9 +57,14 @@ html, body {
     }
 }
 
+p {
+    margin: 0;
+    padding: 10px 0;
+}
+
 .file-uploads {
     width: 95%;
-    min-height: 210px;
+    min-height: 212px;
     padding-left: 10px;
 }
 
@@ -111,16 +116,16 @@ input[type=file], [type=submit]{
 .message {
     display: inline-block;
     background: rgba(255, 255, 255, 0);
-    width: 100%;
-    padding: 12px 20px;
+    width: 90%;
+    padding: 12px 5%;
     border: none;
     outline: none;
 }
 
 .password {
     background: rgba(255, 255, 255, 0);
-    width: 100%;
-    padding: 12px 20px;
+    width: 90%;
+    padding: 12px 5%;
     border: none;
     outline: none;
 }
