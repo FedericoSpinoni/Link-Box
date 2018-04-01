@@ -6,7 +6,12 @@ function ChooseFile(){
         // files is a FileList of File objects. List some properties.
         var output = [];
         for (var i = 0, f; f = files[i]; i++) {
-            output.push('<p>', escape(f.name), '</p>');
+            if (escape(f.name).length > 30) {
+                output.push('<p>', escape(f.name).substr(0,30) + '...', '</p>');
+            }
+            else {
+                output.push('<p>', escape(f.name), '</p>');
+            }
         }
         document.getElementById('list').innerHTML = output.join('');
     }
@@ -26,7 +31,12 @@ function DropFile(){
         // files is a FileList of File objects. List some properties.
         var output = [];
         for (var i = 0, f; f = files[i]; i++) {
-            output.push('<p>', escape(f.name), '</p>');
+            if (escape(f.name).length > 30) {
+                output.push('<p>', escape(f.name).substr(0,30) + '...', '</p>');
+            }
+            else {
+                output.push('<p>', escape(f.name), '</p>');
+            }
         }
         document.getElementById('list').innerHTML = output.join('');
     }
