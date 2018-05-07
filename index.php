@@ -24,7 +24,7 @@
                     <div class="divisor"></div>
 
                     <div class="textarea-container">
-                        <textarea name="message" placeholder="Message"></textarea>
+                        <textarea name="message" class="message" placeholder="Message"></textarea>
                         <div class="textarea-size"></div>
                     </div>
 

@@ -122,12 +122,7 @@ div:empty:before {
 }
 
 .message {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0);
-    width: 90%;
-    padding: 12px 5%;
-    border: none;
-    outline: none;
+    min-height: 42px;
 }
 
 .password {
@@ -151,18 +146,15 @@ div:empty:before {
 .textarea-container {
     position: relative;
     width: 100%;
-  }
+}
   
 textarea, .textarea-size {
-    min-height: 25px;
-    font-family: sans-serif;
-    font-size: 14px;
     box-sizing: border-box;
     overflow: hidden;
     width: 100%;
     display: inline-block;
     background: rgba(255, 255, 255, 0);
-    padding: 11px 5%;
+    padding: 10px 5%;
     border: none;
     outline: none;
 }
@@ -170,7 +162,7 @@ textarea, .textarea-size {
 textarea {
     height: 100%;
     position: absolute;
-    resize:none;
+    resize: none;
     white-space: normal;
 }
   
