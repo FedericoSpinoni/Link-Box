@@ -1,6 +1,10 @@
 (function() {
     var dropzone = document.getElementById('dropzone');
     var submit = document.getElementById('submit');
+    var button = document.getElementById('button');
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+    console.log(formData);
     
     var displayFiles = function(data) {
         var uploads = document.getElementById('uploads'),
@@ -16,12 +20,13 @@
     }
 
     var upload = function(files) {
-        var formData = new FormData(),
-            xhr = new XMLHttpRequest(),
-            x;
+        var x;
 
         for(x = 0; x < files.length; x++) {
+            console.log(files[x]);
+            // aggiungi files alla lista (NON AGGIORNA formData)
             formData.append('file[]', files[x]);
+            console.log(formData);
         }
 
         displayFiles(files);
@@ -30,18 +35,21 @@
             var data = JSON.parse(this.responseText);
             displayUploads(files);
         } */
-
-        xhr.open('post', 'includes/upload.php');
-        xhr.send(formData);
     }
     dropzone.ondrop = function(e) {
         e.preventDefault();
         this.className = 'container';
         upload(e.dataTransfer.files);
     }
+    button.onclick = function(e) {
+        console.log(formData);
+    }
     submit.onclick = function(e) {
         // click submit
-        console.log('submit');
+        // controllo se è null
+        // invia i file della lista
+        xhr.open('post', 'includes/upload.php');
+        xhr.send(formData);
     }
     dropzone.ondragover = function() {
         this.className = 'container dragover';
