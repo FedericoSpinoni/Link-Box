@@ -21,8 +21,6 @@
 			<script type='text/javascript' src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js'></script> 
 		<![endif]-->
 		<script src="js/modernizr.min.js"></script>
-		<script src="js/function.js"></script>
-		<script src="js/autogrowing.js"></script>
 	</head>
 	<body>
 		<!--[if lte IE 8]>

@@ -14,9 +14,12 @@ html, body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background:#fff url(../img/01.jpg) no-repeat center center;
+    background: url(../img/01.jpg) no-repeat center center;
     background-size: cover;
-    box-shadow: inset 0 -1px 5px rgba(0,0,0,0.6);
+}
+
+.container.dragover {
+    opacity: 0.85;
 }
 
 .slide {
@@ -62,10 +65,11 @@ p {
     padding: 10px 0;
 }
 
-.file-uploads {
+#uploads {
     width: 95%;
-    min-height: 212px;
+    height: 355px;
     padding-left: 10px;
+    overflow-y: scroll;
 }
 
 input[type=file], [type=submit]{
@@ -139,36 +143,6 @@ div:empty:before {
 }
 
 .form {
-    height: 300px;
-    overflow-x: hidden;
-}
-
-.textarea-container {
-    position: relative;
-    width: 100%;
-}
-  
-textarea, .textarea-size {
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    display: inline-block;
-    background: rgba(255, 255, 255, 0);
-    padding: 10px 5%;
-    border: none;
-    outline: none;
-}
-  
-textarea {
     height: 100%;
-    position: absolute;
-    resize: none;
-    white-space: normal;
-}
-  
-.textarea-size {
-    visibility: hidden;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    overflow-x: hidden;
 }

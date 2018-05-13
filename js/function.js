@@ -1,54 +1,54 @@
-/* Choose File */
-function ChooseFile(){
-    function handleFileSelect(evt) {
-        var files = evt.target.files; // FileList object
+(function() {
+    var dropzone = document.getElementById('dropzone');
+    var submit = document.getElementById('submit');
     
-        // files is a FileList of File objects. List some properties.
-        var output = [];
-        for (var i = 0, f; f = files[i]; i++) {
-            if (escape(f.name).length > 30) {
-                output.push('<p>', escape(f.name).substr(0,30) + '...', '</p>');
-            }
-            else {
-                output.push('<p>', escape(f.name), '</p>');
-            }
-        }
-        document.getElementById('list').innerHTML = output.join('');
-    }
-    
-    document.getElementById('file').addEventListener('change', handleFileSelect, false);
-}
+    var displayFiles = function(data) {
+        var uploads = document.getElementById('uploads'),
+            p,
+            x;
+        
+        for(x = 0; x < data.length; x++) {
+            p = document.createElement('p');
+            p.innerText = data[x].name;
 
-/* Drop files here */
-
-function DropFile(){
-    function handleFileSelect(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-    
-        var files = evt.dataTransfer.files; // FileList object.
-    
-        // files is a FileList of File objects. List some properties.
-        var output = [];
-        for (var i = 0, f; f = files[i]; i++) {
-            if (escape(f.name).length > 30) {
-                output.push('<p>', escape(f.name).substr(0,30) + '...', '</p>');
-            }
-            else {
-                output.push('<p>', escape(f.name), '</p>');
-            }
+            uploads.appendChild(p);
         }
-        document.getElementById('list').innerHTML = output.join('');
     }
-    
-    function handleDragOver(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-        evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+
+    var upload = function(files) {
+        var formData = new FormData(),
+            xhr = new XMLHttpRequest(),
+            x;
+
+        for(x = 0; x < files.length; x++) {
+            formData.append('file[]', files[x]);
+        }
+
+        displayFiles(files);
+
+        /*  xhr.onload  = function() {
+            var data = JSON.parse(this.responseText);
+            displayUploads(files);
+        } */
+
+        xhr.open('post', 'includes/upload.php');
+        xhr.send(formData);
     }
-    
-    // Setup the dnd listeners.
-    var dropZone = document.getElementById('drop_zone');
-    dropZone.addEventListener('dragover', handleDragOver, false);
-    dropZone.addEventListener('drop', handleFileSelect, false);
-}
+    dropzone.ondrop = function(e) {
+        e.preventDefault();
+        this.className = 'container';
+        upload(e.dataTransfer.files);
+    }
+    submit.onclick = function(e) {
+        // click submit
+        console.log('submit');
+    }
+    dropzone.ondragover = function() {
+        this.className = 'container dragover';
+        return false;
+    }
+    dropzone.ondragleave = function() {
+        this.className = 'container';
+        return false;
+    }
+}());
