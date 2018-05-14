@@ -11,7 +11,7 @@
     	<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
     	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    	<link rel="shortcut icon" href="img/favicon.ico">
+    	<!--<link rel="shortcut icon" href="img/favicon.ico">-->
     	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

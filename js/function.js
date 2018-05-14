@@ -1,61 +1,64 @@
-(function() {
+(function () {
     var dropzone = document.getElementById('dropzone');
     var submit = document.getElementById('submit');
-    var button = document.getElementById('button');
-    var xhr = new XMLHttpRequest();
     var formData = new FormData();
-    console.log(formData);
-    
-    var displayFiles = function(data) {
-        var uploads = document.getElementById('uploads'),
-            p,
-            x;
-        
-        for(x = 0; x < data.length; x++) {
-            p = document.createElement('p');
-            p.innerText = data[x].name;
 
-            uploads.appendChild(p);
+    function checkList (file) {
+        for(var x = 0; x < formData.getAll("file[]").length; x++) {
+            if(formData.getAll('file[]')[x].name == file.name) {
+                updateFile(file, x);
+                return true;
+            }
         }
+        addFile(file);
     }
 
-    var upload = function(files) {
-        var x;
-
-        for(x = 0; x < files.length; x++) {
-            console.log(files[x]);
-            // aggiungi files alla lista (NON AGGIORNA formData)
-            formData.append('file[]', files[x]);
-            console.log(formData);
-        }
-
-        displayFiles(files);
-
-        /*  xhr.onload  = function() {
-            var data = JSON.parse(this.responseText);
-            displayUploads(files);
-        } */
+    var displayFiles = function (data) {
+        var uploads = document.getElementById('uploads');
+        var p = document.createElement('p');
+        p.innerText = data.name;
+        uploads.appendChild(p);
     }
-    dropzone.ondrop = function(e) {
+
+    function updateFile (file, x) {
+        formData.set('file[]'[x], file);
+    }
+
+    function addFile (file) {
+        formData.append('file[]', file);
+        displayFiles(file);
+    }
+
+    var upload = function (files) {
+        for (var x = 0; x < files.length; x++)
+            checkList(files[x]);
+        console.log(formData.getAll("file[]"));
+    }
+    dropzone.ondrop = function (e) {
         e.preventDefault();
         this.className = 'container';
         upload(e.dataTransfer.files);
     }
-    button.onclick = function(e) {
-        console.log(formData);
-    }
-    submit.onclick = function(e) {
-        // click submit
+    submit.onclick = function (e) {
         // controllo se è null
-        // invia i file della lista
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            var uploads = document.getElementById('uploads');
+            while (uploads.hasChildNodes()) {   
+                uploads.removeChild(uploads.firstChild);
+            }
+            console.log("Upload complete");
+            console.log(formData.getAll("file[]"));
+        }
         xhr.open('post', 'includes/upload.php');
         xhr.send(formData);
+        formData.delete('file[]');
     }
-    dropzone.ondragover = function() {
+    dropzone.ondragover = function () {
         this.className = 'container dragover';
         return false;
     }
-    dropzone.ondragleave = function() {
+    dropzone.ondragleave = function () {
         this.className = 'container';
         return false;
     }

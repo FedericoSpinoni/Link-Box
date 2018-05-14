@@ -72,7 +72,7 @@ p {
     overflow-y: scroll;
 }
 
-input[type=file], [type=submit]{
+input[type=file], [type=button]{
     display: none;
 }
 
