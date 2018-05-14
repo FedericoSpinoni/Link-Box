@@ -9,8 +9,6 @@
                 <div class="form">
                     <div class="file-uploads" id="uploads"></div>
                     <div class="divisor"></div>
-                    <input type="password" name="psw" class="password" placeholder="Password">
-                    <div class="divisor"></div>
                     <label for="submit" class="btn-gradient green">Upload</label>
                     <input type="button" id="submit" name='submit'>
                 </div>

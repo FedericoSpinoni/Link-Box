@@ -49,6 +49,9 @@ html, body {
 }
 
 @media screen and (max-width: 420px) {
+    .fileList {
+        width: 85%;
+    }
     .slide {
         top: 265px;
     }
@@ -65,11 +68,39 @@ p {
     padding: 10px 0;
 }
 
-#uploads {
+.file-uploads {
     width: 95%;
-    height: 355px;
+    height: 400px;
     padding-left: 10px;
     overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.fileList {
+    display: inline-block;
+    max-width: 290px;
+    margin: 0;
+    padding: 10px 5px;
+}
+
+.img-delete {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    float: right;
+    width: 20px;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+.img-delete:hover {
+    opacity: 0.4;
+}
+
+.div-fileList {
+    position: relative;
 }
 
 input[type=file], [type=button]{

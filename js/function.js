@@ -1,6 +1,7 @@
 (function () {
     var dropzone = document.getElementById('dropzone');
     var submit = document.getElementById('submit');
+    var input = document.getElementById('file');
     var formData = new FormData();
 
     function checkList (file) {
@@ -15,9 +16,21 @@
 
     var displayFiles = function (data) {
         var uploads = document.getElementById('uploads');
+        var div = document.createElement("div");
+        div.id = "single-file";
+        div.className = "div-fileList";
+
+        var img = document.createElement("img");
+        img.src = 'img/delete-icon.png';
+        img.className = "img-delete";
+
         var p = document.createElement('p');
+        p.className = "fileList";
         p.innerText = data.name;
-        uploads.appendChild(p);
+
+        uploads.appendChild(div);
+        div.appendChild(p);
+        div.appendChild(img);
     }
 
     function updateFile (file, x) {
@@ -61,5 +74,9 @@
     dropzone.ondragleave = function () {
         this.className = 'container';
         return false;
+    }
+    input.onchange = function(e) { 
+        files = e.target.files;
+        upload(files);
     }
 }());
