@@ -49,15 +49,15 @@ html, body {
 }
 
 @media screen and (max-width: 420px) {
-    .fileList {
-        width: 85%;
-    }
     .slide {
         top: 265px;
     }
 }
 
 @media screen and (max-width: 360px) {
+    .fileList {
+        width: 75%;
+    }
     .slide {
         width: 90%;
     }
@@ -78,20 +78,22 @@ p {
 
 .fileList {
     display: inline-block;
-    max-width: 290px;
-    margin: 0;
+    max-width: 280px;
     padding: 10px 5px;
+    padding-right: 10px;
+    overflow: hidden;
+    margin-top: 2px;
 }
 
 .img-delete {
     position: absolute;
-    margin: auto;
+    margin: auto 5px;
     top: 0;
     right: 0;
     bottom: 0;
     float: right;
     width: 20px;
-    padding: 10px 5px;
+    padding: 0px 0px;
     cursor: pointer;
 }
 
@@ -116,7 +118,7 @@ div:empty:before {
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
 }
 
 ::-webkit-scrollbar-track {
