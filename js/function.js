@@ -23,6 +23,7 @@
         var img = document.createElement("img");
         img.src = 'img/delete-icon.png';
         img.className = "img-delete";
+        //img.setAttribute('onclick', "deleteFile('" + data.name + "')");
 
         var p = document.createElement('p');
         p.className = "fileList";
@@ -31,6 +32,11 @@
         uploads.appendChild(div);
         div.appendChild(p);
         div.appendChild(img);
+    }
+
+    function deleteFile (file) {
+        formData.delete(file);
+        console.log(formData.getAll("file[]"));
     }
 
     function updateFile (file, x) {
