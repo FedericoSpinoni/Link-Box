@@ -67,7 +67,6 @@ dropzone.ondrop = function (e) {
     upload(e.dataTransfer.files);
 }
 submit.onclick = function (e) {
-    // controllo se è null
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
         var uploads = document.getElementById('uploads');
@@ -77,8 +76,10 @@ submit.onclick = function (e) {
         console.log("Upload complete");
         console.log(formData.getAll("file[]"));
     }
-    xhr.open('post', 'includes/upload.php');
-    xhr.send(formData);
+    if (formData.getAll("file[]").length > 0) {
+        xhr.open('post', 'includes/upload.php');
+        xhr.send(formData);
+    }
     formData.delete('file[]');
 }
 dropzone.ondragover = function () {
