@@ -1,3 +1,3 @@
-		<script src="js/function.js"></script>
+		<script type="text/javascript" language="javascript" src="js/function.js"></script>
 	</body>
 </html>
