@@ -16,4 +16,6 @@
         </div>
     </div>
 
+<script type="text/javascript" language="javascript" src="js/function.js"></script>
+
 <?php include('includes/foot.php') ?>

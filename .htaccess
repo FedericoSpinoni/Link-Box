@@ -4,4 +4,4 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-RewriteRule ^\w{7}\b.*$ ./download.php?id=$0
+RewriteRule ^\b.*$ ./download.php?id=$0

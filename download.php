@@ -23,7 +23,7 @@
                         else {
                             http_response_code(404);
                             //REINDIRIZZA A 404.php
-                            include('includes/404.php');
+                            header("location: 404.php");
                         }
                     ?>
                 </div>
