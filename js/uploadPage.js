@@ -92,7 +92,7 @@ submit.onclick = function (e) {
         uploads.removeChild(uploads.firstChild);
     }
     xhr.onload = function () {
-        console.log("Upload complete");
+        console.log("Upload completed");
     }
     if (formData.getAll("file[]").length > 0) {
         progressBar(xhr);
