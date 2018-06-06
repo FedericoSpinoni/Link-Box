@@ -76,6 +76,14 @@ p {
     overflow-x: hidden;
 }
 
+.file-downloads {
+    max-width: 330px;
+    height: 435px;
+    padding: 0px 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .fileList {
     display: inline-block;
     max-width: 280px;
@@ -105,7 +113,7 @@ p {
     position: relative;
 }
 
-input[type=file], [type=button] {
+input[type=file], [type=button], [type=submit] {
     display: none;
 }
 

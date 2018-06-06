@@ -14,6 +14,6 @@
         </div>
     </div>
 
-<script type="text/javascript" language="javascript" src="js/uploadPage.js"></script>
+<script type="text/javascript" language="javascript" src="js/upload.js"></script>
 
 <?php include('includes/foot.php') ?>

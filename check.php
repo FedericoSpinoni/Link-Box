@@ -1,5 +1,6 @@
 <?php
-    $dir = "uploads/" . $_GET["id"];
+    $file = $_GET["id"];
+    $dir = "uploads/" . $file;
 
     if(is_dir($dir)) {
         include('includes/200.php');
