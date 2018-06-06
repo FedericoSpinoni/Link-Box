@@ -113,7 +113,7 @@ p {
     position: relative;
 }
 
-input[type=file], [type=button], [type=submit] {
+input[type=file], [type=button], [type=submit], [type=input] {
     display: none;
 }
 
@@ -215,6 +215,7 @@ progress::-webkit-progress-value {
 
 a {
     display: inline-block;
+    cursor: pointer;
     width: 100%;
     text-align: center;
     margin-top: 5px;

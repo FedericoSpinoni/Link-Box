@@ -85,7 +85,7 @@ dropzone.ondrop = function (e) {
     this.className = 'container';
     upload(e.dataTransfer.files);
 }
-submit.onclick = function (e) {
+submit.onclick = function (e) { //Durante l'upload si disattiva il pulsante upload
     var xhr = new XMLHttpRequest();
     var uploads = document.getElementById('uploads');
     while (uploads.hasChildNodes()) {
@@ -93,8 +93,9 @@ submit.onclick = function (e) {
     }
     xhr.onload = function () {
         var link = document.getElementById("status");
-        link.innerHTML = document.URL + "/" + this.responseText;
-        link.setAttribute("href", this.responseText); //Inserire nome cartella e modificare funzione tasto upload (UPLOAD AGAIN)
+        link.innerHTML = document.URL + this.responseText;
+        link.setAttribute('onclick', "copyLink()");
+        //Inserire nome cartella e modificare funzione tasto upload (UPLOAD AGAIN)
         console.log("Upload completed");
     }
     if (formData.getAll("file[]").length > 0) {
@@ -115,4 +116,15 @@ dropzone.ondragleave = function () {
 input.onchange = function (e) {
     files = e.target.files;
     upload(files);
+}
+function copyLink () {
+    var x = document.getElementById("status").innerHTML;
+    console.log(x);
+    var copyhelper = document.createElement("input");
+    copyhelper.value = x;
+    document.body.appendChild(copyhelper);
+    copyhelper.select();
+    document.execCommand("copy");
+    document.body.removeChild(copyhelper);
+    alert("Copied!");
 }
