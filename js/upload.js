@@ -65,7 +65,7 @@ function progressHandler(event) {
 function progressBar(xhr) {
     var uploads = document.getElementById('uploads');
     var progressBar = document.createElement("progress");
-    var status = document.createElement("h3");
+    var status = document.createElement("a");
     progressBar.id = "progressBar";
     progressBar.setAttribute('value', "0");
     progressBar.setAttribute('max', "100");
@@ -92,6 +92,9 @@ submit.onclick = function (e) {
         uploads.removeChild(uploads.firstChild);
     }
     xhr.onload = function () {
+        var link = document.getElementById("status");
+        link.innerHTML = document.URL + "/" + this.responseText;
+        link.setAttribute("href", this.responseText); //Inserire nome cartella e modificare funzione tasto upload (UPLOAD AGAIN)
         console.log("Upload completed");
     }
     if (formData.getAll("file[]").length > 0) {

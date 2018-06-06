@@ -36,6 +36,6 @@
         }
     }
 
-    echo json_encode($uploaded);
+    echo $folder_name;
 
 ?>
