@@ -39,7 +39,7 @@ La seguente figura mostra il diagramma generale dei casi d'uso del software fina
 #### 3.1.1 Upload Page
 Nella pagina di caricamento c'è la possibilità di caricare file tramite un bottone o grazie alla *Drop Zone*. Successivamente si potranno aggiungere o togliere i file prima che vengano caricati sul server. Se il download viene interrotto vengono salvati solamente i file che il sito è riuscito a caricare. Durante l'attesa del caricamento verrà mostrata a video una barra con relativa percentuale. Finito l'upload dei file verrà generato un link utilizzabile per poter scaricare i file.
 
-#### 3.1.2 Download file
+#### 3.1.2 Download Page
 Nella pagina del download viene mostrata la lista dei file da scaricare correlati al link. Al click del pulsante i file vengono compressi in uno zip e scaricati in locale.
 È possibile fare un test del download inserendo questo link http://localhost/Tesina/iUbfSJV.
 
