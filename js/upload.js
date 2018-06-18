@@ -85,7 +85,7 @@ dropzone.ondrop = function (e) {
     this.className = 'container';
     upload(e.dataTransfer.files);
 }
-submit.onclick = function (e) { //Durante l'upload si disattiva il pulsante upload
+submit.onclick = function (e) {
     var xhr = new XMLHttpRequest();
     var uploads = document.getElementById('uploads');
     while (uploads.hasChildNodes()) {
@@ -95,7 +95,6 @@ submit.onclick = function (e) { //Durante l'upload si disattiva il pulsante uplo
         var link = document.getElementById("status");
         link.innerHTML = document.URL + this.responseText;
         link.setAttribute('onclick', "copyLink()");
-        //Inserire nome cartella e modificare funzione tasto upload (UPLOAD AGAIN)
         console.log("Upload completed");
     }
     if (formData.getAll("file[]").length > 0) {
